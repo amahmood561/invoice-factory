@@ -1,6 +1,17 @@
 
 # Invoice Factory
 
+## Prerequisite: Install Go (macOS)
+
+1. Visit https://go.dev/dl/
+2. Download the macOS installer (.pkg file).
+3. Open the file and follow the installation prompts.
+4. After install, verify with:
+   ```sh
+   go version
+   ```
+5. Now you can run Go commands in the backend directory.
+
 A monorepo for an Invoice Generator microservice with Go backend and React frontend.
 
 ## Structure

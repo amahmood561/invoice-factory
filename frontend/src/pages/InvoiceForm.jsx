@@ -41,16 +41,24 @@ export default function InvoiceForm() {
       formData.append("items", JSON.stringify(items));
       formData.append("notes", notes);
       if (logo) formData.append("logo", logo);
-      const res = await axios.post("/generate-invoice", formData, {
+      const res = await axios.post("http://localhost:8080/generate-invoice", formData, {
         responseType: "blob",
       });
-      const url = window.URL.createObjectURL(new Blob([res.data]));
-      const link = document.createElement("a");
-      link.href = url;
-      link.setAttribute("download", `invoice_${invoiceNumber}.pdf`);
-      document.body.appendChild(link);
-      link.click();
-      setSuccess("Invoice PDF downloaded!");
+      if (res.status === 404) {
+        setError("Endpoint not found. Is the backend running?");
+        return;
+      }
+      if (res.headers["content-type"] === "application/pdf" || res.data.type === "application/pdf") {
+        const url = window.URL.createObjectURL(res.data);
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", `invoice_${invoiceNumber}.pdf`);
+        document.body.appendChild(link);
+        link.click();
+        setSuccess("Invoice PDF downloaded!");
+      } else {
+        setError("No PDF received. Check backend response.");
+      }
     } catch (err) {
       setError("Failed to generate invoice PDF.");
     } finally {
