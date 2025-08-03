@@ -79,3 +79,40 @@ This will start:
 
 
 For more details, see the README in each folder.
+
+---
+
+## API Testing Example (Postman)
+
+**POST /generate-invoice**
+
+**URL:**
+`http://localhost:8080/generate-invoice`
+
+**Headers:**
+- Content-Type: `application/json`
+
+**Body (raw, JSON):**
+```json
+{
+  "invoiceNumber": "INV-001",
+  "date": "2025-08-03",
+  "client": {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "address": "123 Main St"
+  },
+  "items": [
+    { "description": "Service A", "quantity": 2, "price": 100 },
+    { "description": "Service B", "quantity": 1, "price": 200 }
+  ],
+  "notes": "Thank you for your business!"
+}
+```
+
+**How to use:**
+1. Open Postman and create a new POST request.
+2. Set the URL to `http://localhost:8080/generate-invoice`.
+3. Set the body type to `raw` and format as `JSON`.
+4. Paste the example JSON above.
+5. Send the request.
