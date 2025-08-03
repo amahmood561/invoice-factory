@@ -127,3 +127,8 @@ For more details, see the README in each folder.
 3. Set the body type to `raw` and format as `JSON`.
 4. Paste the example JSON above.
 5. Send the request.
+
+
+
+<img width="1704" height="956" alt="image" src="https://github.com/user-attachments/assets/ffc30637-a9b5-433f-ae84-29b2bf6ebd1f" />
+
