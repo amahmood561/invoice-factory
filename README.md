@@ -75,4 +75,7 @@ This will start:
 
 ---
 
+<img width="1704" height="956" alt="image" src="https://github.com/user-attachments/assets/d2994c35-94a6-444c-8544-2615cc5c2a89" />
+
+
 For more details, see the README in each folder.
