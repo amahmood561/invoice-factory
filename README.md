@@ -20,6 +20,18 @@ A monorepo for an Invoice Generator microservice with Go backend and React front
 
 ## Quick Start
 
+### Optional: One-Step Local Setup
+
+You can use the provided setup script to install dependencies and run both backend and frontend locally:
+
+```bash
+bash setup.sh
+```
+
+This will start:
+- Backend on [http://localhost:8080](http://localhost:8080)
+- Frontend on [http://localhost:3000](http://localhost:3000)
+
 ### 1. Backend (Go API)
 
 **Setup:**
